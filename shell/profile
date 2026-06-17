@@ -45,6 +45,10 @@ alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
+if command diff --color /dev/null /dev/null &>/dev/null; then
+    alias diff='diff --color'
+fi
+
 # Alias for "atom", needed by Atom community 1.63
 if command -v atom &>/dev/null; then
     alias atom='atom --in-process-gpu'
