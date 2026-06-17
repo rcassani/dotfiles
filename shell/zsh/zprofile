@@ -1,0 +1,8 @@
+#
+# ~/.zprofile
+#
+# It's sourced by Login-Non-interactive shell
+
+# Check if the file exists and source it
+[[ -f ~/.zshrc ]] && . ~/.zshrc
+
