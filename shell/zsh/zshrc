@@ -99,7 +99,7 @@ zle -N down-line-or-beginning-search
 # =============================================================================
 # Plugins
 # =============================================================================
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/GitHub/dotfiles/shell/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 
 # =============================================================================
