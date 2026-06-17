@@ -1,0 +1,61 @@
+#
+# ~/.bashrc
+#
+# It's sourced by Non-login-Interactive shells
+
+# =============================================================================
+# Environment
+# =============================================================================
+# Check if the file exists and source it
+[[ -f ~/.profile ]] && . ~/.profile
+
+
+# =============================================================================
+# History
+# =============================================================================
+# Ignore commands starting with space and the same consecutive commands
+HISTCONTROL=ignoreboth
+
+
+# =============================================================================
+# Aliases
+# =============================================================================
+# Color is not send if piping
+alias ls='ls --color=tty'
+# Enable diff color if possible.
+if command diff --color /dev/null /dev/null &>/dev/null; then
+    alias diff='diff --color'
+fi
+
+
+# =============================================================================
+# Prompt
+# =============================================================================
+# Linux Mint bash default prompt
+PS1="\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ "
+# Simple prompt
+#PS1='[\u@\h \W]\$ '
+
+# Distrobox
+if [ -n "$CONTAINER_ID" ]; then
+    PS1="📦($CONTAINER_ID) $PS1"
+fi
+
+
+# =============================================================================
+# Key bindings
+# =============================================================================
+# Bindings just for interactive shells (login or non-login)
+# Programs such as `scp` use non-interactive shells, the binds may print errors
+if [[ $- == *i* ]]; then
+  # Search in history
+  bind '"\e[A": history-search-backward'
+  bind '"\e[B": history-search-forward'
+  # Do not show ^C on Ctrl-C
+  bind 'set echo-control-characters off'
+  # Colored completion
+  bind 'set colored-stats on'
+  bind 'set colored-completion-prefix on'
+  # Don't wrap long lines awkwardly
+  bind 'set horizontal-scroll-mode off'
+fi

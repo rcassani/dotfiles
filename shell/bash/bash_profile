@@ -1,0 +1,8 @@
+#
+# ~/.bash_profile
+#
+# It's sourced by Login-Interactive and Login-Non-interactive shells
+
+# Check if the file exists and source it
+[[ -f ~/.bashrc ]] && . ~/.bashrc
+
