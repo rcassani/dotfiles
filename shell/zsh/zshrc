@@ -113,7 +113,7 @@ autoload -Uz vcs_info
 precmd() { vcs_info }
 zstyle ':vcs_info:git:*' formats '%b'
 
-source ~/.zsh/agnoster-zsh-theme/agnoster.zsh-theme
+source ~/GitHub/dotfiles/shell/zsh/themes/agnoster/agnoster.zsh-theme
 
 
 # =============================================================================
